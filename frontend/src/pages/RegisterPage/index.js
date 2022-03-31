@@ -50,8 +50,8 @@ const RegisterPage = () => {
   useEffect(() => {
     if (!loading && !success && message) toast.error(message);
     if (success) {
-      history.push("/login");
       dispatch({ type: USER_REGISTER_RESULT, success: false, message: "" });
+      history.push("/login");
     }
   }, [loading, success, message]);
 
