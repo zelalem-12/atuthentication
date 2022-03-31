@@ -1,5 +1,4 @@
 const { Schema } = require("mongoose");
-const bcrypt = require("bcryptjs");
 const { emailRegex } = require("../../utils/constants");
 
 const UserSchema = new Schema({

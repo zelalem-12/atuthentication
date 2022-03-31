@@ -30,17 +30,7 @@ const loginValidator = () => {
   return [userValidator.email, userValidator.password];
 };
 
-// const sendPasswordResetMailValidator = () => {
-//   return [userValidator.email];
-// };
-
-// const resetPasswordValidator = () => {
-//   return [userValidator.email, userValidator.password, userValidator.token];
-// };
-
 module.exports = {
   signupValidator,
   loginValidator,
-  // sendPasswordResetMailValidator,
-  // resetPasswordValidator,
 };
