@@ -9,4 +9,3 @@ Applicaiotn for user login and signup
 
     Please take a look the Readme file of both backend  and frontend
 
-Checkout the [The Live Demo](https://simpleauth.herokuapp.com/)
