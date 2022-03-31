@@ -1,0 +1,10 @@
+.default_page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 5rem;
+}
