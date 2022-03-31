@@ -1,35 +1,51 @@
 import {
   USER_SIGNIN_REQUEST,
-  USER_SIGNIN_SUCCESS,
-  USER_SIGNIN_FAIL,
+  USER_SIGNIN_RESULT,
   USER_REGISTER_REQUEST,
-  USER_REGISTER_SUCCESS,
-  USER_REGISTER_FAIL,
+  USER_REGISTER_RESULT,
+  USER_DASHBOARD_REQUEST,
+  USER_DASHBOARD_RESULT,
 } from "./constants";
 
-const userSigninReducer = (state = {}, action) => {
+const userSigninReducer = (
+  state = { loading: false, success: false, message: "" },
+  action
+) => {
   switch (action.type) {
     case USER_SIGNIN_REQUEST:
-      return { loading: true };
-    case USER_SIGNIN_SUCCESS:
-      return { loading: false, success: true, user: action.payload };
-    case USER_SIGNIN_FAIL:
-      return { loading: false, success: false, error: action.payload };
+      return { ...state, loading: true };
+    case USER_SIGNIN_RESULT:
+      return { ...state, loading: false, ...action };
     default:
       return state;
   }
 };
-const userRegisterReducer = (state = {}, action) => {
+const userRegisterReducer = (
+  state = { loading: false, success: false, message: "" },
+  action
+) => {
   switch (action.type) {
     case USER_REGISTER_REQUEST:
-      return { loading: true };
-    case USER_REGISTER_SUCCESS:
-      return { loading: false, success: true, user: action.payload };
-    case USER_REGISTER_FAIL:
-      return { loading: false, success: false, error: action.payload };
+      return { ...state, loading: true };
+    case USER_REGISTER_RESULT:
+      return { ...state, loading: false, ...action };
     default:
       return state;
   }
 };
 
-export { userSigninReducer, userRegisterReducer };
+const userDashboardReducer = (
+  state = { loading: false, user: null },
+  action
+) => {
+  switch (action.type) {
+    case USER_DASHBOARD_REQUEST:
+      return { ...state, loading: true };
+    case USER_DASHBOARD_RESULT:
+      return { ...state, loading: false, ...action };
+    default:
+      return state;
+  }
+};
+
+export { userSigninReducer, userRegisterReducer, userDashboardReducer };

@@ -1,5 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import styles from "./App.module.css";
@@ -8,6 +9,7 @@ import { PrivateRoute } from "./components";
 
 import { Dashboard, LoginPage, RegisterPage, DefaultPage } from "./pages";
 
+toast.configure();
 const App = () => {
   return (
     <div className={styles.app_container}>
